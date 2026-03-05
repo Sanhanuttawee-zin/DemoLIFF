@@ -1,45 +1,961 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Brightside People | Executive Growth Portal</title>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════════════════════════
-   BRIGHTSIDE PEOPLE — ORANGE × WHITE
-   Executive Growth Portal
-═══════════════════════════════════════ */
-:root {
-  /* Brand */
-  --orange:      #E8622A;
-  --orange-d:    #C94F1A;
-  --orange-l:    #F47A44;
-  --orange-xl:   #FFF0EB;
-  --orange-2:    rgba(232,98,42,0.10);
-  --orange-3:    rgba(232,98,42,0.06);
+  1. WELCOME
+══════════════════════ -->
+<div id="sc-welcome" class="screen active stagger">
+  <div class="ws-logo-wrap">
+    <!-- Real Brightside People Logo -->
+    <img
+      src="https://brightsidepeople.com/wp-content/uploads/BSide-Logo.png"
+      alt="Brightside People"
+      class="ws-logo-img"
+      onerror="this.style.display='none';document.getElementById('logo-fb').style.display='flex';"
+    >
+    <div id="logo-fb" class="ws-logo-fallback" style="display:none;">
+      <div class="ws-logo-text">Brightside<br>People</div>
+    </div>
+  </div>
 
-  /* Neutrals */
-  --white:       #FFFFFF;
-  --bg:          #F8F5F2;
-  --bg2:         #F2EDE8;
-  --surface:     #FFFFFF;
-  --ink:         #1C1410;
-  --ink2:        #3D2B1F;
-  --text:        #2D1F16;
-  --text2:       #7A6255;
-  --text3:       #B8A898;
-  --border:      #E8DDD5;
-  --border2:     rgba(232,98,42,0.25);
+  <div class="ws-tagline">Executive Growth Portal</div>
+  <div class="ws-headline">พัฒนาองค์กร<br>ให้ยั่งยืน</div>
+  <div style="width:36px;height:3px;background:var(--orange);border-radius:2px;margin:12px auto 16px;"></div>
+  <div class="ws-sub">แพลตฟอร์มติดตามพัฒนาการผู้บริหาร<br>หลัง Workshop · สะสม Leadership Points<br>วัดผลการเปลี่ยนแปลงอย่างเป็นรูปธรรม</div>
 
-  /* Accents */
-  --gold:        #D4902A;
-  --gold-l:      rgba(212,144,42,0.12);
-  --sage:        #3DAB7A;
-  --sage-l:      rgba(61,171,122,0.12);
-  --sky:         #2E86C1;
-  --sky-l:       rgba(46,134,193,0.1);
-  --rose:        #C0392B;
+  <div class="ws-features">
+    <div class="ws-feat">
+      <div class="ws-fi">📋</div>
+      <div>
+        <div class="ws-ft">ส่ง Commitment</div>
+        <div class="ws-fs">Action plan หลัง Workshop</div>
+      </div>
+    </div>
+    <div class="ws-feat">
+      <div class="ws-fi">📊</div>
+      <div>
+        <div class="ws-ft">ติดตาม KPI</div>
+        <div class="ws-fs">วัดผลเป็น Dashboard</div>
+      </div>
+    </div>
+    <div class="ws-feat">
+      <div class="ws-fi">⭐</div>
+      <div>
+        <div class="ws-ft">สะสม Points</div>
+        <div class="ws-fs">Leadership Score</div>
+      </div>
+    </div>
+    <div class="ws-feat">
+      <div class="ws-fi">🏆</div>
+      <div>
+        <div class="ws-ft">รับรางวัล</div>
+        <div class="ws-fs">Badges &amp; Privileges</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ws-divider">
+    <div class="ws-line"></div>
+    <div class="ws-div-txt">เชื่อมต่อผ่าน LINE</div>
+    <div class="ws-line"></div>
+  </div>
+
+  <button class="btn btn-line" onclick="doLogin()">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+    </svg>
+    เข้าสู่ระบบด้วย LINE
+  </button>
+  <button class="btn btn-ghost" onclick="doLogin()">ทดลองใช้งาน (Demo)</button>
+</div>
+
+<!-- ══════════════════════
+  2. DASHBOARD
+══════════════════════ -->
+<div id="sc-home" class="screen">
+  <div class="home-hero">
+    <div class="hero-bar">
+      <!-- Logo white version in hero -->
+      <img
+        src="https://brightsidepeople.com/wp-content/uploads/BSide-Logo.png"
+        alt="Brightside People"
+        class="hero-logo"
+        onerror="this.style.display='none';document.getElementById('hero-logo-fb').style.display='flex';"
+      >
+      <div id="hero-logo-fb" class="hero-logo-fallback" style="display:none;">
+        <div class="hero-logo-dot">✦</div>
+        <span>Brightside</span>
+      </div>
+      <div class="hero-notif" onclick="toast('มี 2 Commitment รอดำเนินการ')">
+        🔔<div class="hero-notif-dot"></div>
+      </div>
+    </div>
+    <div class="hero-greet">ยินดีต้อนรับกลับ</div>
+    <div class="hero-name" id="home-name">คุณวิชัย มั่นคง</div>
+
+    <div class="score-card">
+      <div class="score-ring" style="position:relative;">
+        <svg width="76" height="76" viewBox="0 0 76 76">
+          <circle class="ring-track" cx="38" cy="38" r="30"/>
+          <circle class="ring-fill" id="ring-fill" cx="38" cy="38" r="30"
+            stroke-dasharray="188.5" stroke-dashoffset="66"/>
+        </svg>
+        <div class="ring-num">
+          <div class="ring-pct" id="ring-pct">65</div>
+          <div class="ring-unit">%</div>
+        </div>
+      </div>
+      <div class="score-body">
+        <div class="score-lbl">Leadership Score</div>
+        <div class="score-val" id="score-val">820</div>
+        <div class="score-sub">Level 3 · Emerging Leader</div>
+        <div class="score-prog">
+          <div class="score-bar"><div class="score-fill" id="score-fill" style="width:64%"></div></div>
+          <div class="score-nxt">→ 1,000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-row">
+    <div class="qs" onclick="showNav('commit')">
+      <div class="qs-icon">📋</div>
+      <div class="qs-val" id="qs-pending">2</div>
+      <div class="qs-lbl">รอส่งงาน</div>
+    </div>
+    <div class="qs" onclick="showNav('journey')">
+      <div class="qs-icon">📈</div>
+      <div class="qs-val">72%</div>
+      <div class="qs-lbl">ความก้าวหน้า</div>
+    </div>
+    <div class="qs">
+      <div class="qs-icon">🔥</div>
+      <div class="qs-val" id="qs-streak">7</div>
+      <div class="qs-lbl">วัน Streak</div>
+    </div>
+    <div class="qs" onclick="showNav('recog')">
+      <div class="qs-icon">🏆</div>
+      <div class="qs-val">5</div>
+      <div class="qs-lbl">Badges</div>
+    </div>
+  </div>
+
+  <div class="alert-band" onclick="showNav('commit')">
+    <div class="alert-pulse"></div>
+    <div class="alert-body">
+      <div class="alert-title">มี Commitment รอดำเนินการ 2 รายการ</div>
+      <div class="alert-sub">ส่งวันนี้รับ Bonus +50 Points พิเศษ!</div>
+    </div>
+    <div class="alert-chev">›</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Program ของท่าน</div>
+      <div class="sec-link" onclick="showNav('journey')">ดูทั้งหมด</div>
+    </div>
+
+    <div class="prog-card" onclick="openCommit('c1')">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
+        <div>
+          <div class="pc-type">Executive Workshop</div>
+          <div class="pc-name">Strategic Leadership &amp; Decision Making</div>
+          <div class="pc-date">สัมมนา 25 พ.ค. 2568</div>
+        </div>
+        <span class="pill pill-orange">รอส่งงาน</span>
+      </div>
+      <div class="pc-bar"><div class="pc-fill" style="width:35%;background:linear-gradient(90deg,var(--orange),var(--orange-l));"></div></div>
+      <div class="pc-bottom">
+        <div class="pc-meta">กำหนดส่ง 31 พ.ค. 2568</div>
+        <div class="pc-pts">+120 pts</div>
+      </div>
+    </div>
+
+    <div class="prog-card done">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
+        <div>
+          <div class="pc-type" style="color:var(--sage);">Executive Coaching</div>
+          <div class="pc-name">สร้าง High-Performance Team</div>
+          <div class="pc-date">Coaching 18 พ.ค. 2568</div>
+        </div>
+        <span class="pill pill-sage">สำเร็จ</span>
+      </div>
+      <div class="pc-bar"><div class="pc-fill" style="width:100%;background:linear-gradient(90deg,var(--sage),#52c490);"></div></div>
+      <div class="pc-bottom">
+        <div class="pc-meta">ส่งงานครบ · คะแนน 94/100</div>
+        <div class="pc-pts" style="color:var(--sage);">✓ 100 pts</div>
+      </div>
+    </div>
+
+    <div class="prog-card sky" onclick="openCommit('c2')">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
+        <div>
+          <div class="pc-type" style="color:var(--sky);">Follow-Up Session</div>
+          <div class="pc-name">30-Day Action Review</div>
+          <div class="pc-date">Follow-up 20 พ.ค. 2568</div>
+        </div>
+        <span class="pill pill-sky">กำลังดำเนิน</span>
+      </div>
+      <div class="pc-bar"><div class="pc-fill" style="width:60%;background:linear-gradient(90deg,var(--sky),#5BA4D0);"></div></div>
+      <div class="pc-bottom">
+        <div class="pc-meta">รอ Feedback จาก Facilitator</div>
+        <div class="pc-pts">+60 pts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Commitment Streak</div>
+      <div class="sec-link">🔥 7 วันติดต่อกัน</div>
+    </div>
+    <div class="card"><div class="streak-row" id="streak-row"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Leadership Insights</div>
+    </div>
+    <div class="insight-item">
+      <div class="ii-icon">🧠</div>
+      <div class="ii-body">
+        <div class="ii-title">Strategic Thinking</div>
+        <div class="ii-sub">ดีขึ้น 12% จาก Pre-assessment</div>
+      </div>
+      <div class="ii-score">88</div>
+    </div>
+    <div class="insight-item">
+      <div class="ii-icon">🤝</div>
+      <div class="ii-body">
+        <div class="ii-title">People Management</div>
+        <div class="ii-sub">ดีขึ้น 8% จากการ Coaching</div>
+      </div>
+      <div class="ii-score">76</div>
+    </div>
+    <div class="insight-item">
+      <div class="ii-icon">⚡</div>
+      <div class="ii-body">
+        <div class="ii-title">Execution &amp; Accountability</div>
+        <div class="ii-sub">ต้องพัฒนาเพิ่มเติม</div>
+      </div>
+      <div class="ii-score" style="color:var(--rose);">62</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+</div>
+
+<!-- ══════════════════════
+  3. COMMIT (ส่งงาน)
+══════════════════════ -->
+<div id="sc-commit" class="screen">
+  <div class="commit-head">
+    <div class="ch-back" onclick="showNav('home')">← กลับหน้าหลัก</div>
+    <span class="pill pill-orange" style="background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);" id="commit-tag">Executive Workshop</span>
+    <div class="ch-title" id="commit-title">Strategic Leadership &amp; Decision Making</div>
+    <div class="ch-sub" id="commit-sub">บันทึก Action Commitment เพื่อนำไปปฏิบัติภายใน 30 วัน</div>
+    <div class="ch-due" id="commit-due">⏰ ส่งภายใน 31 พฤษภาคม 2568</div>
+  </div>
+
+  <div class="commit-body">
+    <div class="xp-bar-card">
+      <div>
+        <div class="xp-lbl">Leadership Points ที่จะได้รับ</div>
+        <div class="xp-sub">ยิ่งทำครบ ยิ่งได้แต้มเพิ่ม</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="xp-val">+<span id="xp-prev">0</span></div>
+        <div class="xp-unit">Points</div>
+      </div>
+    </div>
+
+    <!-- Checklist -->
+    <div class="fgrp">
+      <div class="flbl">Action Commitment <span class="f-badge">+15 pts ต่อข้อ</span></div>
+      <div id="ci-wrap">
+        <div class="ci" onclick="toggleCI(this,15)">
+          <div class="ci-box"></div>
+          <div class="ci-txt">จัด Weekly Team Briefing เพื่อ Align เป้าหมายทีม</div>
+          <div class="ci-pts">+15</div>
+        </div>
+        <div class="ci" onclick="toggleCI(this,15)">
+          <div class="ci-box"></div>
+          <div class="ci-txt">ทบทวนและปรับ KPI ของทีมให้สอดคล้อง OKR</div>
+          <div class="ci-pts">+15</div>
+        </div>
+        <div class="ci" onclick="toggleCI(this,15)">
+          <div class="ci-box"></div>
+          <div class="ci-txt">ทำ 1-on-1 Coaching กับ Direct Report อย่างน้อย 2 คน</div>
+          <div class="ci-pts">+15</div>
+        </div>
+        <div class="ci" onclick="toggleCI(this,15)">
+          <div class="ci-box"></div>
+          <div class="ci-txt">นำ Decision Framework มาใช้จริงในการประชุม 1 ครั้ง</div>
+          <div class="ci-pts">+15</div>
+        </div>
+        <div class="ci" onclick="toggleCI(this,25)">
+          <div class="ci-box"></div>
+          <div class="ci-txt">เขียน Strategic Plan ของแผนกสำหรับ Q3 (งานพิเศษ)</div>
+          <div class="ci-pts">+25</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:7px;font-size:12px;color:var(--text3);">
+        <span>✓ <span id="ci-cnt">0</span>/5 รายการ</span>
+        <span style="color:var(--orange);font-weight:700;"><span id="ci-pts-total">0</span> pts</span>
+      </div>
+    </div>
+
+    <!-- Confidence -->
+    <div class="fgrp">
+      <div class="flbl">ระดับความมั่นใจในการนำไปปฏิบัติ <span class="f-badge">+10 pts</span></div>
+      <div class="mood-row">
+        <div class="mb" onclick="selMood(this)"><span class="me">😰</span><span class="mn">น้อยมาก</span></div>
+        <div class="mb" onclick="selMood(this)"><span class="me">😕</span><span class="mn">น้อย</span></div>
+        <div class="mb" onclick="selMood(this)"><span class="me">😐</span><span class="mn">กลาง</span></div>
+        <div class="mb" onclick="selMood(this)"><span class="me">😊</span><span class="mn">มั่นใจ</span></div>
+        <div class="mb" onclick="selMood(this)"><span class="me">💪</span><span class="mn">มากที่สุด</span></div>
+      </div>
+    </div>
+
+    <!-- Stars -->
+    <div class="fgrp">
+      <div class="flbl">ให้คะแนน Program นี้ <span class="f-badge">+10 pts</span></div>
+      <div class="star-row">
+        <span class="sb" onclick="setStar(1)">★</span>
+        <span class="sb" onclick="setStar(2)">★</span>
+        <span class="sb" onclick="setStar(3)">★</span>
+        <span class="sb" onclick="setStar(4)">★</span>
+        <span class="sb" onclick="setStar(5)">★</span>
+      </div>
+      <div style="text-align:center;font-size:12px;color:var(--text3);margin-top:5px;" id="star-lbl">แตะเพื่อให้คะแนน</div>
+    </div>
+
+    <!-- Upload -->
+    <div class="fgrp">
+      <div class="flbl">แนบหลักฐานการดำเนินการ <span class="f-badge">+20 pts</span></div>
+      <div class="upload-zone" onclick="document.getElementById('fInput').click()" id="upload-z">
+        <div class="uz-icon">📎</div>
+        <div class="uz-title">แนบไฟล์ / รูปภาพ</div>
+        <div class="uz-sub">Meeting notes · Action plan · Photo · Screenshot</div>
+      </div>
+      <input type="file" id="fInput" accept="image/*,.pdf" onchange="handleFile(event)">
+      <div class="up-prev" id="up-prev">
+        <img class="up-thumb" id="up-img" src="" alt="">
+        <div class="up-name" id="up-name">file</div>
+        <div class="up-rm" onclick="rmFile()">✕</div>
+      </div>
+    </div>
+
+    <!-- Reflection -->
+    <div class="fgrp">
+      <div class="flbl">Key Takeaway &amp; Reflection <span class="f-badge">+20 pts</span></div>
+      <textarea class="ftextarea" id="reflect-txt"
+        placeholder="สิ่งที่ได้เรียนรู้ · สิ่งที่จะเปลี่ยนแปลง · ความท้าทายที่คาดว่าจะพบ..."
+        oninput="onReflect(this)" maxlength="600" rows="5"></textarea>
+      <div style="display:flex;justify-content:space-between;margin-top:5px;font-size:11px;color:var(--text3);">
+        <span>อย่างน้อย 50 ตัวอักษร</span>
+        <span><span id="rc">0</span>/600</span>
+      </div>
+    </div>
+
+    <button class="btn btn-orange" onclick="submitCommit()">ส่ง Commitment ›</button>
+    <button class="btn btn-ghost" onclick="showNav('home')">บันทึกฉบับร่าง</button>
+    <div style="height:28px;"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════
+  4. JOURNEY (ติดตามผล)
+══════════════════════ -->
+<div id="sc-journey" class="screen">
+  <div class="journey-head">
+    <div class="ch-back jh-back" onclick="showNav('home')">← กลับ</div>
+    <div class="jh-title">Executive Journey 📈</div>
+    <div class="jh-sub">Leadership Development · Cohort 2568</div>
+    <div style="display:flex;gap:8px;margin-top:12px;">
+      <span class="pill" style="background:rgba(255,255,255,.2);color:#fff;">Week 3 / 4</span>
+      <span class="pill" style="background:rgba(255,255,255,.2);color:#fff;">72% สำเร็จ</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">Leadership KPIs</div><div class="sec-link">อัพเดต 25 พ.ค.</div></div>
+    <div class="kpi-grid">
+      <div class="kpi-c">
+        <div class="kpi-icon">🧠</div><div class="kpi-val">88</div>
+        <div class="kpi-lbl">Strategic Thinking</div>
+        <div class="kpi-delta kup">↑ +12 จาก Baseline</div>
+        <div class="kpi-bar"><div class="kpi-fill" style="width:88%;background:linear-gradient(90deg,var(--sky),#5BA4D0);"></div></div>
+      </div>
+      <div class="kpi-c">
+        <div class="kpi-icon">🤝</div><div class="kpi-val">76</div>
+        <div class="kpi-lbl">People Management</div>
+        <div class="kpi-delta kup">↑ +8 จากการ Coaching</div>
+        <div class="kpi-bar"><div class="kpi-fill" style="width:76%;background:linear-gradient(90deg,var(--sage),#52c490);"></div></div>
+      </div>
+      <div class="kpi-c">
+        <div class="kpi-icon">🎯</div><div class="kpi-val">82</div>
+        <div class="kpi-lbl">Goal Alignment</div>
+        <div class="kpi-delta kup">↑ +15 หลัง Workshop</div>
+        <div class="kpi-bar"><div class="kpi-fill" style="width:82%;background:linear-gradient(90deg,var(--orange),var(--orange-l));"></div></div>
+      </div>
+      <div class="kpi-c">
+        <div class="kpi-icon">⚡</div><div class="kpi-val">62</div>
+        <div class="kpi-lbl">Execution Score</div>
+        <div class="kpi-delta kdn">↓ ต้องพัฒนาเพิ่ม</div>
+        <div class="kpi-bar"><div class="kpi-fill" style="width:62%;background:linear-gradient(90deg,var(--rose),#E74C3C);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Milestones -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">Milestones</div></div>
+    <div class="scroll-x" style="padding:4px 16px 12px;">
+      <div style="flex-shrink:0;width:128px;background:var(--sage-l);border:1.5px solid rgba(61,171,122,.3);border-radius:13px;padding:13px;">
+        <div style="font-size:24px;margin-bottom:6px;">🚀</div>
+        <div style="font-size:12px;font-weight:700;">เริ่มต้น Program</div>
+        <div style="font-size:10px;color:var(--text2);margin-top:3px;line-height:1.4;">ลงทะเบียนและเข้า Session แรก</div>
+        <div style="font-size:10px;font-weight:700;color:var(--sage);margin-top:7px;">✓ สำเร็จ</div>
+      </div>
+      <div style="flex-shrink:0;width:128px;background:var(--sage-l);border:1.5px solid rgba(61,171,122,.3);border-radius:13px;padding:13px;">
+        <div style="font-size:24px;margin-bottom:6px;">📝</div>
+        <div style="font-size:12px;font-weight:700;">ส่งงานครั้งแรก</div>
+        <div style="font-size:10px;color:var(--text2);margin-top:3px;line-height:1.4;">Commitment ชิ้นแรก</div>
+        <div style="font-size:10px;font-weight:700;color:var(--sage);margin-top:7px;">✓ สำเร็จ</div>
+      </div>
+      <div style="flex-shrink:0;width:128px;background:var(--orange-xl);border:1.5px solid var(--border2);border-radius:13px;padding:13px;">
+        <div style="font-size:24px;margin-bottom:6px;">🔥</div>
+        <div style="font-size:12px;font-weight:700;">Streak 10 วัน</div>
+        <div style="font-size:10px;color:var(--text2);margin-top:3px;line-height:1.4;">Active 10 วันติดต่อกัน</div>
+        <div style="font-size:10px;font-weight:700;color:var(--orange);margin-top:7px;">⚡ 7/10 วัน</div>
+      </div>
+      <div style="flex-shrink:0;width:128px;background:var(--bg);border:1.5px solid var(--border);border-radius:13px;padding:13px;opacity:.5;">
+        <div style="font-size:24px;margin-bottom:6px;">🏆</div>
+        <div style="font-size:12px;font-weight:700;">จบ Program</div>
+        <div style="font-size:10px;color:var(--text2);margin-top:3px;line-height:1.4;">ครบทุก Session</div>
+        <div style="font-size:10px;font-weight:700;color:var(--text3);margin-top:7px;">🔒 ยังไม่ถึง</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">Program Timeline</div></div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-dot done">✓</div>
+          <div class="tl-line done"></div>
+        </div>
+        <div style="flex:1;">
+          <div class="tl-content">
+            <div class="tc-date">5 MAY 2568</div>
+            <div class="tc-title">Session 1: Pre-Assessment &amp; Goal Setting</div>
+            <div class="tc-body">ประเมิน Leadership Baseline และกำหนด KPI ร่วมกับ Facilitator</div>
+            <div class="tc-score">⭐ 96/100 · ส่งงานครบ</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-dot done">✓</div>
+          <div class="tl-line done"></div>
+        </div>
+        <div style="flex:1;">
+          <div class="tl-content">
+            <div class="tc-date">12 MAY 2568</div>
+            <div class="tc-title">Executive Coaching: High-Performance Team</div>
+            <div class="tc-body">1-on-1 Coaching กับ Executive Coach · Team Development Plan</div>
+            <div class="tc-score">⭐ 94/100 · ส่งงานครบ</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-dot active">✦</div>
+          <div class="tl-line"></div>
+        </div>
+        <div style="flex:1;">
+          <div class="tl-content active">
+            <div class="tc-date" style="color:var(--orange);">25 MAY 2568 · กำลังดำเนินการ</div>
+            <div class="tc-title">Workshop: Strategic Leadership &amp; Decision Making</div>
+            <div class="tc-body">Decision Framework, Scenario Planning, Strategic Communication</div>
+            <div class="tc-pend">⏰ ส่ง Commitment ก่อน 31 พ.ค.</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-dot" style="opacity:.4;">4</div>
+        </div>
+        <div style="flex:1;">
+          <div class="tl-content" style="opacity:.45;">
+            <div class="tc-date">5 JUN 2568</div>
+            <div class="tc-title">Final: Integration &amp; Sustainability Plan</div>
+            <div class="tc-body">สรุปพัฒนาการ, 90-Day Action Plan และ Peer Learning</div>
+            <div class="tc-pend">🔒 ยังไม่ถึง</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coach note -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">Message จาก Facilitator</div></div>
+    <div class="coach-card">
+      <div class="cc-top">
+        <div class="cc-av">👨‍💼</div>
+        <div>
+          <div class="cc-name">ดร.อนันต์ วิชาการ</div>
+          <div class="cc-role">Lead Facilitator · Brightside People</div>
+        </div>
+        <div class="cc-date">25 พ.ค.</div>
+      </div>
+      <div class="cc-msg">
+        คุณวิชัยทำได้ดีมากในเรื่อง Strategic Thinking 👏 อยากให้โฟกัสที่ Execution ในสัปดาห์นี้ ลองนำ Decision Framework ไปใช้จริงในการประชุมทีม แล้วบันทึกผลส่งมาด้วยนะครับ
+      </div>
+      <div style="display:flex;gap:7px;margin-top:11px;">
+        <span class="pill pill-sky">🎯 Execution</span>
+        <span class="pill pill-orange">📋 Action Plan</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+</div>
+
+<!-- ══════════════════════
+  5. RECOGNITION (แต้ม)
+══════════════════════ -->
+<div id="sc-recog" class="screen">
+  <div class="recog-head">
+    <div class="ch-back" onclick="showNav('home')" style="color:rgba(255,255,255,.7);">← กลับ</div>
+    <div class="rh-lbl">Leadership Points</div>
+    <div class="rh-pts" id="rh-pts">820</div>
+    <div class="rh-unit">Points สะสม</div>
+    <div class="rh-tier">🥈 Silver Executive · ต่อไป Gold ที่ 1,000 pts</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">ระดับผู้บริหาร</div></div>
+    <div class="tier-grid">
+      <div class="tier-c">
+        <div class="tier-icon">🥉</div>
+        <div class="tier-name">Bronze</div>
+        <div class="tier-range">0 – 499 pts</div>
+      </div>
+      <div class="tier-c current">
+        <div class="tier-now">ระดับคุณ</div>
+        <div class="tier-icon">🥈</div>
+        <div class="tier-name">Silver</div>
+        <div class="tier-range">500 – 999 pts</div>
+      </div>
+      <div class="tier-c locked">
+        <div class="tier-icon">🥇</div>
+        <div class="tier-name">Gold</div>
+        <div class="tier-range">1,000 – 1,999 pts</div>
+      </div>
+      <div class="tier-c locked">
+        <div class="tier-icon">💎</div>
+        <div class="tier-name">Diamond</div>
+        <div class="tier-range">2,000+ pts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">Achievement Badges</div></div>
+    <div class="badge-grid">
+      <div class="badge-c earned">
+        <span class="badge-e">🚀</span>
+        <div class="badge-n">First Step</div>
+        <div class="badge-d">เริ่ม Program แรก</div>
+      </div>
+      <div class="badge-c earned">
+        <span class="badge-e">📋</span>
+        <div class="badge-n">Committed</div>
+        <div class="badge-d">ส่งงานครั้งแรก</div>
+        <div class="badge-new">NEW</div>
+      </div>
+      <div class="badge-c earned">
+        <span class="badge-e">🔥</span>
+        <div class="badge-n">On Fire</div>
+        <div class="badge-d">Streak 7 วัน</div>
+      </div>
+      <div class="badge-c earned">
+        <span class="badge-e">🧠</span>
+        <div class="badge-n">Strategist</div>
+        <div class="badge-d">Strategic Score 85+</div>
+      </div>
+      <div class="badge-c earned">
+        <span class="badge-e">💬</span>
+        <div class="badge-n">Reflective</div>
+        <div class="badge-d">Reflection 5 ชิ้น</div>
+      </div>
+      <div class="badge-c locked">
+        <span class="badge-e">🏆</span>
+        <div class="badge-n">Completer</div>
+        <div class="badge-d">จบ Program ครบ</div>
+      </div>
+      <div class="badge-c locked">
+        <span class="badge-e">👑</span>
+        <div class="badge-n">Top Leader</div>
+        <div class="badge-d">Score 95+ ทุก KPI</div>
+      </div>
+      <div class="badge-c locked">
+        <span class="badge-e">💎</span>
+        <div class="badge-n">Diamond Exec</div>
+        <div class="badge-d">2,000+ pts</div>
+      </div>
+      <div class="badge-c locked">
+        <span class="badge-e">🌟</span>
+        <div class="badge-n">Culture Driver</div>
+        <div class="badge-d">แบ่งปันความรู้ทีม</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">แลกสิทธิพิเศษ</div><div class="sec-link">ดูทั้งหมด</div></div>
+    <div class="rw-item" onclick="openRedeem(this,300,'Executive Coaching 1:1')">
+      <div class="rw-icon">🎯</div>
+      <div><div class="rw-name">Executive Coaching 1:1</div><div class="rw-desc">Session ส่วนตัวกับ Expert Coach 60 นาที</div></div>
+      <div class="rw-cost">300 pts</div>
+    </div>
+    <div class="rw-item" onclick="openRedeem(this,200,'Workshop Priority Access')">
+      <div class="rw-icon">📚</div>
+      <div><div class="rw-name">Workshop Priority Access</div><div class="rw-desc">สิทธิ์ลงทะเบียน Workshop ก่อนใคร</div></div>
+      <div class="rw-cost">200 pts</div>
+    </div>
+    <div class="rw-item used">
+      <div class="rw-icon">📖</div>
+      <div><div class="rw-name">Leadership E-Book Bundle</div><div class="rw-desc">แลกแล้ว · 20 พ.ค. 2568</div></div>
+      <div class="rw-cost rw-used">ใช้แล้ว ✓</div>
+    </div>
+    <div class="rw-item" onclick="openRedeem(this,500,'VIP Executive Dinner')">
+      <div class="rw-icon">🥂</div>
+      <div><div class="rw-name">VIP Executive Dinner</div><div class="rw-desc">Networking กับ C-Suite &amp; Business Leaders</div></div>
+      <div class="rw-cost">500 pts</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-title">ประวัติ Points</div></div>
+    <div class="card" id="pts-hist">
+      <div class="hist-item">
+        <div class="hist-icon">⭐</div>
+        <div class="hist-body"><div class="hist-act">ส่ง Commitment: High-Performance Team</div><div class="hist-date">18 พ.ค. 2568</div></div>
+        <div class="hist-amt hist-earn">+100</div>
+      </div>
+      <div class="hist-item">
+        <div class="hist-icon">🔥</div>
+        <div class="hist-body"><div class="hist-act">Streak 7-Day Bonus</div><div class="hist-date">24 พ.ค. 2568</div></div>
+        <div class="hist-amt hist-earn">+50</div>
+      </div>
+      <div class="hist-item">
+        <div class="hist-icon">🏆</div>
+        <div class="hist-body"><div class="hist-act">Badge: Strategist Unlocked</div><div class="hist-date">20 พ.ค. 2568</div></div>
+        <div class="hist-amt hist-earn">+30</div>
+      </div>
+      <div class="hist-item">
+        <div class="hist-icon">📖</div>
+        <div class="hist-body"><div class="hist-act">แลก Leadership E-Book Bundle</div><div class="hist-date">20 พ.ค. 2568</div></div>
+        <div class="hist-amt hist-spend">−150</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+</div>
+
+<!-- ── BOTTOM NAV ── -->
+<div class="bnav" id="bnav" style="display:none;">
+  <div class="bnav-item active" id="nav-home" onclick="showNav('home')">
+    <div class="bnav-icon">🏠</div><div class="bnav-lbl">Dashboard</div>
+  </div>
+  <div class="bnav-item" id="nav-commit" onclick="showNav('commit')">
+    <div class="bnav-icon">📋</div><div class="bnav-lbl">ส่งงาน</div>
+    <div class="bnav-pip"></div>
+  </div>
+  <div class="bnav-item" id="nav-journey" onclick="showNav('journey')">
+    <div class="bnav-icon">📈</div><div class="bnav-lbl">Journey</div>
+  </div>
+  <div class="bnav-item" id="nav-recog" onclick="showNav('recog')">
+    <div class="bnav-icon">⭐</div><div class="bnav-lbl">Recognition</div>
+  </div>
+</div>
+
+<!-- ── SUCCESS OVERLAY ── -->
+<div class="overlay" id="ov-success">
+  <div class="ov-card">
+    <div style="font-size:56px;margin-bottom:12px;">🎉</div>
+    <div style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:6px;">ส่ง Commitment สำเร็จ!</div>
+    <div style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:18px;">Facilitator จะ Review และส่ง Feedback กลับภายใน 24 ชั่วโมง</div>
+    <div style="background:var(--orange-xl);border:1.5px solid var(--border2);border-radius:14px;padding:16px;margin-bottom:14px;">
+      <div style="font-size:36px;font-weight:800;color:var(--orange);">+<span id="ov-pts">0</span> pts</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:4px;">Leadership Points · รวม <span id="ov-total">0</span> pts</div>
+    </div>
+    <div id="ov-badges" style="display:flex;justify-content:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;"></div>
+    <button class="btn btn-orange" onclick="closeOv()">ดู Journey ของท่าน ›</button>
+  </div>
+</div>
+
+<!-- ── REDEEM OVERLAY ── -->
+<div class="overlay" id="ov-redeem">
+  <div class="ov-card">
+    <div style="font-size:48px;margin-bottom:12px;">🎁</div>
+    <div style="font-size:19px;font-weight:800;color:var(--ink);margin-bottom:6px;">ยืนยันการแลกสิทธิ์</div>
+    <div style="font-size:13px;color:var(--text2);margin-bottom:18px;" id="rd-sub">แลก Executive Coaching 1:1</div>
+    <div style="background:var(--orange-xl);border:1.5px solid var(--border2);border-radius:14px;padding:14px;margin-bottom:16px;">
+      <div style="font-size:28px;font-weight:800;color:var(--orange);">−<span id="rd-cost">300</span> pts</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:3px;">คงเหลือ <span id="rd-after">520</span> pts</div>
+    </div>
+    <button class="btn btn-orange" onclick="confirmRedeem()">ยืนยันแลกสิทธิ์</button>
+    <button class="btn btn-ghost" onclick="document.getElementById('ov-redeem').classList.remove('show')">ยกเลิก</button>
+  </div>
+</div>
+
+<div class="toast" id="toast-el"></div>
+<div class="cfwrap" id="cfwrap"></div>
+
+</div><!-- .app -->
+<script>
+// ── STATE ──────────────────────────────────
+const S={
+  name:'วิชัย มั่นคง',pts:820,ptsMax:1000,streak:7,pending:2,
+  ci_n:0,ci_pts:0,mood:false,stars:0,file:false,reflect:false,
+  current:'c1',pendingRedeem:null,
+};
+const STAR_LBL=['','ต้องปรับปรุง','พอใช้ได้','ดีพอสมควร','ดีมาก','ยอดเยี่ยม! 🎉'];
+const COMMIT_DATA={
+  c1:{tag:'Executive Workshop',title:'Strategic Leadership & Decision Making',sub:'บันทึก Action Commitment เพื่อนำไปปฏิบัติภายใน 30 วัน',due:'⏰ ส่งภายใน 31 พฤษภาคม 2568'},
+  c2:{tag:'Follow-Up Session',title:'30-Day Action Review',sub:'รายงานความคืบหน้าของ Action Plan',due:'⏰ ส่งภายใน 28 พฤษภาคม 2568'},
+};
+
+// ── NAV ────────────────────────────────────
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sc-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function showNav(id){
+  const noNav=['commit'];
+  document.getElementById('bnav').style.display=noNav.includes(id)?'none':'flex';
+  showScreen(id);
+  document.querySelectorAll('.bnav-item').forEach(n=>n.classList.remove('active'));
+  const el=document.getElementById('nav-'+id);
+  if(el)el.classList.add('active');
+}
+
+// ── LOGIN ──────────────────────────────────
+function doLogin(){
+  toast('🟢 เชื่อมต่อ LINE สำเร็จ!');
+  setTimeout(()=>{
+    document.getElementById('bnav').style.display='flex';
+    showScreen('home');
+    document.getElementById('home-name').textContent='คุณ'+S.name;
+    buildStreak();
+    animRing(65);
+  },800);
+}
+
+// ── STREAK ────────────────────────────────
+function buildStreak(){
+  const days=['จ','อ','พ','พฤ','ศ','ส','อา'];
+  document.getElementById('streak-row').innerHTML=days.map((d,i)=>{
+    const done=i<S.streak, today=i===S.streak-1;
+    return`<div class="sd${done?' done':''}${today?' today':''}">
+      <div class="sd-e">${done?'🔥':'·'}</div>
+      <div class="sd-d">${d}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── RING ──────────────────────────────────
+function animRing(pct){
+  const r=30,circ=2*Math.PI*r;
+  const fill=document.getElementById('ring-fill');
+  setTimeout(()=>{ fill.style.strokeDashoffset=circ-(circ*pct/100); },300);
+  document.getElementById('ring-pct').textContent=pct;
+}
+
+// ── COMMIT OPEN ───────────────────────────
+function openCommit(id){
+  S.current=id; const d=COMMIT_DATA[id];
+  document.getElementById('commit-tag').textContent=d.tag;
+  document.getElementById('commit-title').innerHTML=d.title;
+  document.getElementById('commit-sub').textContent=d.sub;
+  document.getElementById('commit-due').textContent=d.due;
+  resetForm(); showNav('commit');
+}
+
+// ── CHECKLIST ─────────────────────────────
+function toggleCI(el,pts){
+  el.classList.toggle('checked');
+  const box=el.querySelector('.ci-box');
+  if(el.classList.contains('checked')){
+    box.textContent='✓';S.ci_n++;S.ci_pts+=pts;spawnPt(el,'+'+pts+'pts');
+  }else{box.textContent='';S.ci_n--;S.ci_pts-=pts;}
+  document.getElementById('ci-cnt').textContent=S.ci_n;
+  document.getElementById('ci-pts-total').textContent=S.ci_pts;
+  calcXP();
+}
+
+// ── MOOD ──────────────────────────────────
+function selMood(el){
+  document.querySelectorAll('.mb').forEach(m=>m.classList.remove('sel'));
+  el.classList.add('sel');S.mood=true;spawnPt(el,'+10pts');calcXP();
+}
+
+// ── STARS ─────────────────────────────────
+function setStar(n){
+  S.stars=n;
+  document.querySelectorAll('.sb').forEach((s,i)=>s.classList.toggle('on',i<n));
+  document.getElementById('star-lbl').textContent=STAR_LBL[n];
+  spawnPt(document.getElementById('star-lbl'),'+10pts');calcXP();
+}
+
+// ── FILE ──────────────────────────────────
+function handleFile(e){
+  const f=e.target.files[0];if(!f)return;
+  S.file=true;
+  const r=new FileReader();
+  r.onload=rv=>{
+    const img=document.getElementById('up-img');
+    if(f.type.startsWith('image/')){img.src=rv.target.result;img.style.display='block';}
+    else img.style.display='none';
+    document.getElementById('up-name').textContent=f.name;
+    document.getElementById('up-prev').classList.add('show');
+    document.getElementById('upload-z').classList.add('has-file');
+    document.getElementById('upload-z').querySelector('.uz-title').textContent='✓ แนบไฟล์แล้ว';
+    spawnPt(document.getElementById('upload-z'),'+20pts');calcXP();
+  };r.readAsDataURL(f);
+}
+function rmFile(){
+  S.file=false;
+  document.getElementById('up-prev').classList.remove('show');
+  document.getElementById('upload-z').classList.remove('has-file');
+  document.getElementById('upload-z').querySelector('.uz-title').textContent='แนบไฟล์ / รูปภาพ';
+  document.getElementById('fInput').value='';calcXP();
+}
+
+// ── REFLECT ───────────────────────────────
+function onReflect(el){
+  document.getElementById('rc').textContent=el.value.length;
+  S.reflect=el.value.trim().length>=50;calcXP();
+}
+
+// ── XP CALC ───────────────────────────────
+function calcXP(){
+  let x=S.ci_pts;
+  if(S.mood)x+=10;if(S.stars>0)x+=10;if(S.file)x+=20;if(S.reflect)x+=20;
+  document.getElementById('xp-prev').textContent=x;return x;
+}
+function resetForm(){
+  document.querySelectorAll('.ci').forEach(c=>{c.classList.remove('checked');c.querySelector('.ci-box').textContent='';});
+  document.querySelectorAll('.mb').forEach(m=>m.classList.remove('sel'));
+  document.querySelectorAll('.sb').forEach(s=>s.classList.remove('on'));
+  document.getElementById('star-lbl').textContent='แตะเพื่อให้คะแนน';
+  document.getElementById('reflect-txt').value='';document.getElementById('rc').textContent='0';
+  S.ci_n=0;S.ci_pts=0;S.mood=false;S.stars=0;S.file=false;S.reflect=false;
+  rmFile();calcXP();
+}
+
+// ── SUBMIT ────────────────────────────────
+function submitCommit(){
+  const xp=calcXP();
+  if(xp<10){toast('⚠️ กรุณาทำอย่างน้อย 1 รายการก่อน');return;}
+  S.pts=Math.min(9999,S.pts+xp);S.pending=Math.max(0,S.pending-1);S.streak++;
+
+  const badges=[];
+  if(S.ci_n>=3)badges.push({e:'📋',n:'Committed'});
+  if(S.file)badges.push({e:'📎',n:'Documented'});
+  if(S.reflect)badges.push({e:'🧠',n:'Reflective'});
+
+  document.getElementById('ov-pts').textContent=xp;
+  document.getElementById('ov-total').textContent=S.pts;
+  document.getElementById('ov-badges').innerHTML=badges.map(b=>
+    `<div style="text-align:center"><div style="font-size:28px">${b.e}</div><div style="font-size:10px;color:var(--text2);margin-top:4px;font-weight:700">${b.n}</div></div>`
+  ).join('');
+  document.getElementById('ov-success').classList.add('show');
+
+  // sync UI
+  document.getElementById('score-val').textContent=S.pts;
+  document.getElementById('rh-pts').textContent=S.pts;
+  document.getElementById('qs-pending').textContent=S.pending;
+  document.getElementById('qs-streak').textContent=S.streak;
+  buildStreak();
+  const pct=Math.min(99,Math.round(S.pts/S.ptsMax*100));
+  document.getElementById('score-fill').style.width=pct+'%';
+  animRing(pct);
+  if(S.pending===0){const pip=document.querySelector('#nav-commit .bnav-pip');if(pip)pip.remove();}
+
+  addHist(xp);launchConfetti();
+}
+function closeOv(){
+  document.getElementById('ov-success').classList.remove('show');
+  resetForm();showNav('journey');
+}
+
+// ── REDEEM ────────────────────────────────
+function openRedeem(el,cost,name){
+  if(S.pts<cost){toast('⚠️ Points ไม่เพียงพอ');return;}
+  S.pendingRedeem={el,cost,name};
+  document.getElementById('rd-sub').textContent='แลก "'+name+'" ใช้ '+cost+' pts';
+  document.getElementById('rd-cost').textContent=cost;
+  document.getElementById('rd-after').textContent=S.pts-cost;
+  document.getElementById('ov-redeem').classList.add('show');
+}
+function confirmRedeem(){
+  const{el,cost,name}=S.pendingRedeem;
+  S.pts-=cost;
+  document.getElementById('score-val').textContent=S.pts;
+  document.getElementById('rh-pts').textContent=S.pts;
+  const c=el.querySelector('.rw-cost');c.textContent='ใช้แล้ว ✓';c.className='rw-cost rw-used';
+  el.classList.add('used');
+  document.getElementById('ov-redeem').classList.remove('show');
+  toast('🎁 แลกสิทธิ์สำเร็จ! ทีมงานจะติดต่อภายใน 24 ชม.');
+  addHist(-cost,'แลก: '+name);
+}
+
+// ── HISTORY ───────────────────────────────
+function addHist(amt,act){
+  const hist=document.getElementById('pts-hist');
+  const el=document.createElement('div');el.className='hist-item';
+  el.innerHTML=`<div class="hist-icon">${amt>0?'⭐':'🎁'}</div>
+    <div class="hist-body"><div class="hist-act">${act||(amt>0?'ส่ง Commitment: '+(COMMIT_DATA[S.current]||{title:''}).title:'')}</div><div class="hist-date">วันนี้</div></div>
+    <div class="hist-amt ${amt>0?'hist-earn':'hist-spend'}">${amt>0?'+':''}${amt}</div>`;
+  hist.prepend(el);
+}
+
+// ── EFFECTS ───────────────────────────────
+function toast(msg){
+  const t=document.getElementById('toast-el');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+function spawnPt(el,txt){
+  const r=el.getBoundingClientRect();
+  const d=document.createElement('div');d.className='float-pt';d.textContent=txt;
+  d.style.cssText=`left:${r.left+r.width/2-20}px;top:${r.top+window.scrollY-12}px;`;
+  document.body.appendChild(d);setTimeout(()=>d.remove(),1500);
+}
+function launchConfetti(){
+  const wrap=document.getElementById('cfwrap');
+  const cols=['#E8622A','#F47A44','#FFE87C','#3DAB7A','#2E86C1','#C9A84C','#fff'];
+  for(let i=0;i<55;i++){
+    const c=document.createElement('div');c.className='cf';
+    c.style.cssText=`left:${Math.random()*100}%;top:-20px;background:${cols[i%cols.length]};width:${7+Math.random()*7}px;height:${7+Math.random()*7}px;animation-duration:${1.5+Math.random()*2}s;animation-delay:${Math.random()*.5}s;`;
+    wrap.appendChild(c);setTimeout(()=>c.remove(),4000);
+  }
+}
+
+// ── INIT ──────────────────────────────────
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('bnav').style.display='none';
+});
+</script>
+</body>
+</html>
+:        #C0392B;
   --rose-l:      rgba(192,57,43,0.1);
 
   /* UI */
